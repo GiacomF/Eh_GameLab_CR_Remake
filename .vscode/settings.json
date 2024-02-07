@@ -52,5 +52,5 @@
         "Temp/": true
     },
     "dotnet.preferCSharpExtension": true,
-    "dotnet.defaultSolution": "Test Random Path.sln"
+    "dotnet.defaultSolution": "Eh_GameLab_CR_Remake.sln"
 }
