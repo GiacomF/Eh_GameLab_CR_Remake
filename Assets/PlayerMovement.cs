@@ -4,7 +4,14 @@ using System.Collections;
 
 public class PlayerMovement : MonoBehaviour
 {
+    Rigidbody rb;
     public int MoveDistance;
+    public float JumpForce;
+
+    void Start()
+    {
+        rb = GetComponent<Rigidbody>();
+    }
    void Update()
    {
         MeshRotate();
@@ -12,18 +19,22 @@ public class PlayerMovement : MonoBehaviour
         if(Input.GetKeyUp(KeyCode.W))
         {
             Move(Vector3.forward*MoveDistance);
+            Jump();
         }
         else if(Input.GetKeyUp(KeyCode.S))
         {
             Move(Vector3.back*MoveDistance);
+            Jump();
         }
         else if(Input.GetKeyUp(KeyCode.A))
         {
             Move(Vector3.left*MoveDistance);
+            Jump();
         }
         else if(Input.GetKeyUp(KeyCode.D))
         {
             Move(Vector3.right*MoveDistance);
+            Jump();
         }
    }
 
@@ -68,5 +79,10 @@ public class PlayerMovement : MonoBehaviour
             yield return null;
         }
         transform.position = destination;
+   }
+
+   private void Jump()
+   {
+        rb.AddForce(0, JumpForce, 0);
    } 
 }

@@ -14,32 +14,6 @@ public class PlayerMeshAnimator : MonoBehaviour
 
     void Update()
     {
-        PrepareJump();
-        Jump();
-    }
-
-    void Jump()
-    {
-        if(Input.GetKeyUp(KeyCode.W))
-        {
-            playerAnimation.SetTrigger("Hopping");
-        }
-        else if(Input.GetKeyUp(KeyCode.S))
-        {
-            playerAnimation.SetTrigger("Hopping");
-        }
-        else if(Input.GetKeyUp(KeyCode.A))
-        {
-            playerAnimation.SetTrigger("Hopping");
-        }
-        else if(Input.GetKeyUp(KeyCode.D))
-        {
-            playerAnimation.SetTrigger("Hopping");
-        }
-    }
-
-    void PrepareJump()
-    {
         if(Input.GetKeyDown(KeyCode.W))
         {
             playerAnimation.SetTrigger("Preparing");
