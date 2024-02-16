@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
         get 
         {
             if (_instance == null)
-                _instance = FindAnyObjectByType<GameManager>();
+                _instance = FindObjectOfType<GameManager>();
             if(_instance == null)
                 Debug.LogError("GameManager not found, can't create singleton object");
             return _instance; 
@@ -23,10 +23,8 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        /*  
-            GameStateManager.instance.RegisterState(GameStateManager.GameStates.MainMenu, new GSMainMenu());
-            GameStateManager.instance.RegisterState(GameStateManager.GameStates.GamePlay, new GSGamePlay());
-        */  
+        GameStateManager.instance.RegisterState(GameStates.MainMenu, new GSMainMenu());
+        //GameStateManager.instance.RegisterState(GameStates.Playing, new GSGamePlay());
     }
 
     private void Start()

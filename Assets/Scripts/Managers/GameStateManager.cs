@@ -9,7 +9,7 @@ public class GameStateManager : MonoBehaviour
         get
         {
             if(_instance == null)
-                _instance = FindAnyObjectByType<GameStateManager>();
+                _instance = FindObjectOfType<GameStateManager>();
             if(_instance == null)
                 Debug.LogError("GameStateManager not found, can't create singleton object");
             return _instance;

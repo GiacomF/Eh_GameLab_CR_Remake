@@ -1,6 +1,7 @@
-public enum GameStates
+public enum GameUI
 {
-    Loading,
+    NONE,
+    //Loading,
     MainMenu,
     Playing,
     PauseMenu,
