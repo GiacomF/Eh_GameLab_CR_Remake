@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting.ReorderableList.Element_Adder_Menu;
 using UnityEngine;
 
 public class PlayerMeshAnimator : MonoBehaviour
@@ -15,7 +16,19 @@ public class PlayerMeshAnimator : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.W))
         {
-            playerAnimation.SetTrigger("Hopping");
+            playerAnimation.SetTrigger("Preparing");
+        }
+        else if(Input.GetKeyDown(KeyCode.S))
+        {
+            playerAnimation.SetTrigger("Preparing");
+        }
+        else if(Input.GetKeyDown(KeyCode.A))
+        {
+            playerAnimation.SetTrigger("Preparing");
+        }
+        else if(Input.GetKeyDown(KeyCode.D))
+        {
+            playerAnimation.SetTrigger("Preparing");
         }
     }
 }

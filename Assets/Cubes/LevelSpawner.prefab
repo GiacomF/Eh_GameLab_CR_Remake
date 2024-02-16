@@ -1,0 +1,59 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4624052451015501002
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4624052451015501004}
+  - component: {fileID: 4624052451015501005}
+  m_Layer: 0
+  m_Name: LevelSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4624052451015501004
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4624052451015501002}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -21.35, y: 0, z: 0.66}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4624052451015501005
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4624052451015501002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 735bce7c52470d04d8e7b9ec867fc5e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SafeBlocks:
+  - {fileID: 5372398941930074062, guid: be54c8dcbf2aa5e4da5d05501b6fbbaa, type: 3}
+  - {fileID: 5534361459656461343, guid: 0700f7ce81b67ae498241c962d5b0261, type: 3}
+  - {fileID: 7883652296790100470, guid: 94a472f1a907c17418208855986a30b0, type: 3}
+  - {fileID: 513317492490029503, guid: c6cecb75cad739b48b21024134753183, type: 3}
+  UnsafeBlocks:
+  - {fileID: 4707032417555090943, guid: 2626c793fa821164982b281123af4ea2, type: 3}
+  - {fileID: 1439824399624604283, guid: 728389e903053124da42265baa1a24e4, type: 3}
+  - {fileID: 6617875727796542163, guid: 05e14771b27d4c74fb52a246431f5999, type: 3}
+  - {fileID: 4772590152923897192, guid: b8917cb62990790468c1ff8a8dee4ef3, type: 3}
+  InitialPercentage: 0.7
+  LevelThreshold: 25
+  MaxRoad: 100

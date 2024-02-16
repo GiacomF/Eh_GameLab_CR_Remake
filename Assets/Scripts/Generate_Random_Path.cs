@@ -24,7 +24,7 @@ public class Generate_Random_Path : MonoBehaviour
         {
             float GeneratePercentage = UnityEngine.Random.value;
             Safe.Add(GeneratePercentage < InitialPercentage - MathF.Truncate(i/LevelThreshold) * 0.05f);
-            Vector3 NewBLockPosition = new Vector3(0, 0, i);
+            Vector3 NewBLockPosition = new Vector3(transform.position.x, transform.position.y,transform.position.z + i);
             GameObject RandomObject;
 
             if(Safe[i])
