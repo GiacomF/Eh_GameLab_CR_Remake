@@ -11,7 +11,7 @@ public class UIMainMenu : MonoBehaviour, IGameUI
 
     public void Init()
     {
-        newGameButton.onClick.AddListener(() => { Debug.Log("Start a game"); });
+        newGameButton.onClick.AddListener(() => { startNewGame(); });
     }
 
     public void SetActive(bool active)
@@ -22,5 +22,11 @@ public class UIMainMenu : MonoBehaviour, IGameUI
     public GameUI GetUIType()
     {
         return UiType;
+    }
+
+    private void startNewGame() 
+    {
+        LevelManager.instance.startLevel();
+        GameStateManager.instance.SetCurrentGameState(GameStates.Playing);
     }
 }

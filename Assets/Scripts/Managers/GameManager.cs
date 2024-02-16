@@ -24,7 +24,8 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         GameStateManager.instance.RegisterState(GameStates.MainMenu, new GSMainMenu());
-        //GameStateManager.instance.RegisterState(GameStates.Playing, new GSGamePlay());
+        GameStateManager.instance.RegisterState(GameStates.Playing, new GSPlaying());
+        GameStateManager.instance.RegisterState(GameStates.PauseMenu, new GSPauseMenu());
     }
 
     private void Start()

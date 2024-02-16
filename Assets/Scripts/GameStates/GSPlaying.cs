@@ -6,7 +6,7 @@ public class GSPlaying : IGameState
 {
     public void OnStateEnter()
     {
-        /*UIManager.instance.ShowUI(UIManager.GameUI.GamePlay);*/
+        UIManager.instance.ShowUI(GameUI.Playing);
         GameStateManager.instance.gameIsPaused = false;
     }
     public void OnStateExit()
@@ -15,6 +15,18 @@ public class GSPlaying : IGameState
     }
     public void OnStateUpdate()
     {
+        if (Input.GetKeyUp(KeyCode.Escape))
+        {
+            if (!GameStateManager.instance.gameIsPaused)
+            {
+                UIManager.instance.ShowUI(GameUI.PauseMenu);
+            }
+            else
+            {
+                GameStateManager.instance.gameIsPaused = false;
+                UIManager.instance.ShowUI(GameUI.Playing);
+            }
+        }
     }
     public static void GoToGameOver()
     {
