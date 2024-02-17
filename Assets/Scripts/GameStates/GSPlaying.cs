@@ -11,21 +11,14 @@ public class GSPlaying : IGameState
     }
     public void OnStateExit()
     {
+        UIManager.instance.ShowUI(GameUI.NONE);
         GameStateManager.instance.gameIsPaused = true;
     }
     public void OnStateUpdate()
     {
         if (Input.GetKeyUp(KeyCode.Escape))
         {
-            if (!GameStateManager.instance.gameIsPaused)
-            {
-                UIManager.instance.ShowUI(GameUI.PauseMenu);
-            }
-            else
-            {
-                GameStateManager.instance.gameIsPaused = false;
-                UIManager.instance.ShowUI(GameUI.Playing);
-            }
+            GameStateManager.instance.SetCurrentGameState(GameStates.PauseMenu);
         }
     }
     public static void GoToGameOver()

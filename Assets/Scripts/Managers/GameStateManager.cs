@@ -17,6 +17,7 @@ public class GameStateManager : MonoBehaviour
     }
 
     public bool gameIsPaused = true;
+    public bool isUnpausingGame = false;
 
     private static GameStateManager _instance;
     private Dictionary<GameStates, IGameState> registeredGameStates = new Dictionary<GameStates, IGameState>();

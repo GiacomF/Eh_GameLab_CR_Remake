@@ -6,7 +6,8 @@ public class GSMainMenu : IGameState
 {
     public void OnStateEnter()
     {
-       UIManager.instance.ShowUI(GameUI.MainMenu);
+        GameStateManager.instance.gameIsPaused = true;
+        UIManager.instance.ShowUI(GameUI.MainMenu);
     }
     public void OnStateExit()
     {
