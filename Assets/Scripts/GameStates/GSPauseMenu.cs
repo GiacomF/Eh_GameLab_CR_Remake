@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class GSPauseMenu : IGameState
 {
-    private float unpauseTimer = 3;
-
     public void OnStateEnter()
     {
         GameStateManager.instance.gameIsPaused = true;
@@ -17,20 +15,9 @@ public class GSPauseMenu : IGameState
     }
     public void OnStateUpdate()
     {
-        if (Input.GetKeyUp(KeyCode.Escape) && !GameStateManager.instance.isUnpausingGame)
+        if (Input.GetKeyUp(KeyCode.Escape))
         {
             GameStateManager.instance.isUnpausingGame = true;
-        }
-        if (unpauseTimer <= 0)
-        {
-            unpauseTimer = 3;
-            GameStateManager.instance.isUnpausingGame = false;
-            GameStateManager.instance.SetCurrentGameState(GameStates.Playing);
-        }
-        if (GameStateManager.instance.isUnpausingGame)
-        {
-            Debug.Log(unpauseTimer);
-            unpauseTimer -= Time.deltaTime;
         }
     }
 }
