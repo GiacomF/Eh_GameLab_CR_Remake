@@ -30,5 +30,23 @@ public class PlayerMeshAnimator : MonoBehaviour
         {
             playerAnimation.SetTrigger("Preparing");
         }
+
+
+        if(Input.GetKeyUp(KeyCode.W))
+        {
+            playerAnimation.SetTrigger("BackToIdle");
+        }
+        else if(Input.GetKeyUp(KeyCode.S))
+        {
+            playerAnimation.SetTrigger("BackToIdle");
+        }
+        else if(Input.GetKeyUp(KeyCode.A))
+        {
+            playerAnimation.SetTrigger("BackToIdle");
+        }
+        else if(Input.GetKeyUp(KeyCode.D))
+        {
+            playerAnimation.SetTrigger("BackToIdle");
+        }
     }
 }

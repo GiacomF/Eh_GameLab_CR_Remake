@@ -4,12 +4,14 @@ using JetBrains.Annotations;
 using UnityEditor;
 using UnityEngine;
 
-public class V_PlayerMovement : MonoBehaviour
+public class V3_PlayerMovement : MonoBehaviour
 {
     Rigidbody rb;
+    public float Speed = 2f;
     public float JumpForce;
     public Vector3 nextDir;
     public Vector3 CurrPos;
+    public bool isMoving = false;
     public bool CanJump = false;
 
     void Start()
@@ -21,6 +23,13 @@ public class V_PlayerMovement : MonoBehaviour
     void Update()
     {
         Direction();
+        if(isMoving == true)
+        {    
+            if(transform.position != new Vector3 (CurrPos.x, transform.position.y, CurrPos.z) + nextDir)
+            {
+                transform.position = Vector3.MoveTowards(transform.position, new Vector3 (CurrPos.x, transform.position.y, CurrPos.z) + nextDir, Speed);
+            }
+        }
     }
 
 
@@ -28,38 +37,30 @@ public class V_PlayerMovement : MonoBehaviour
     {
         if(CanJump)
         {
-            if(Input.GetKeyDown(KeyCode.W))
+            if(Input.GetKeyUp(KeyCode.W))
             {
+                isMoving = true;
                 nextDir.z = Input.GetAxisRaw ("Vertical");                
                 Jump();
             }
-            else if(Input.GetKeyDown(KeyCode.S))
+            else if(Input.GetKeyUp(KeyCode.S))
             {
+                isMoving = true;
                 nextDir.z = Input.GetAxisRaw ("Vertical");
                 Jump();
             }
-            else if(Input.GetKeyDown(KeyCode.A))
+            else if(Input.GetKeyUp(KeyCode.A))
             {
+                isMoving = true;
                 nextDir.x = Input.GetAxisRaw ("Horizontal");
                 Jump();
             }
-            else if(Input.GetKeyDown(KeyCode.D))
+            else if(Input.GetKeyUp(KeyCode.D))
             {
+                isMoving = true;
                 nextDir.x = Input.GetAxisRaw ("Horizontal");
                 Jump();
             }
-        }
-
-        float movementSpeed = 5f * Time.deltaTime;
-            
-        if(transform.position != new Vector3 (CurrPos.x, transform.position.y, CurrPos.z) + nextDir)
-        {
-            transform.position = Vector3.MoveTowards(transform.position, new Vector3 (CurrPos.x, transform.position.y, CurrPos.z) + nextDir, movementSpeed);
-        }
-        else
-        {
-            nextDir = Vector3.zero;
-            CurrPos = transform.position;
         }
     }
 
