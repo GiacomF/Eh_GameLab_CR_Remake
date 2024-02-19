@@ -10,7 +10,7 @@ public class V_PlayerMovement : MonoBehaviour
     public float JumpForce;
     public Vector3 nextDir;
     public Vector3 CurrPos;
-    public LayerMask ground;
+    public bool CanJump = false;
 
     void Start()
     {
@@ -20,41 +20,41 @@ public class V_PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        if(Physics.Raycast(transform.position, -Vector3.up, out RaycastHit ground, 0.8f))
-        {
-            Direction();
-        }
+        Direction();
     }
 
 
     void Direction()
     {
-        if(Input.GetKeyDown(KeyCode.W))
+        if(CanJump)
         {
-            nextDir.z = Input.GetAxisRaw ("Vertical");
-            Jump();
-        }
-        else if(Input.GetKeyDown(KeyCode.S))
-        {
-            nextDir.z = Input.GetAxisRaw ("Vertical");
-            Jump();
-        }
-        else if(Input.GetKeyDown(KeyCode.A))
-        {
-            nextDir.x = Input.GetAxisRaw ("Horizontal");
-            Jump();
-        }
-        else if(Input.GetKeyDown(KeyCode.D))
-        {
-            nextDir.x = Input.GetAxisRaw ("Horizontal");
-            Jump();
+            if(Input.GetKeyDown(KeyCode.W))
+            {
+                nextDir.z = Input.GetAxisRaw ("Vertical");                
+                Jump();
+            }
+            else if(Input.GetKeyDown(KeyCode.S))
+            {
+                nextDir.z = Input.GetAxisRaw ("Vertical");
+                Jump();
+            }
+            else if(Input.GetKeyDown(KeyCode.A))
+            {
+                nextDir.x = Input.GetAxisRaw ("Horizontal");
+                Jump();
+            }
+            else if(Input.GetKeyDown(KeyCode.D))
+            {
+                nextDir.x = Input.GetAxisRaw ("Horizontal");
+                Jump();
+            }
         }
 
         float movementSpeed = 5f * Time.deltaTime;
-        
+            
         if(transform.position != new Vector3 (CurrPos.x, transform.position.y, CurrPos.z) + nextDir)
         {
-            transform.position = Vector3.MoveTowards(transform.position,new Vector3 (CurrPos.x, transform.position.y, CurrPos.z) + nextDir, movementSpeed);
+            transform.position = Vector3.MoveTowards(transform.position, new Vector3 (CurrPos.x, transform.position.y, CurrPos.z) + nextDir, movementSpeed);
         }
         else
         {
@@ -67,5 +67,15 @@ public class V_PlayerMovement : MonoBehaviour
     {
         Vector3 ForceJump = new Vector3 (0, JumpForce, 0);
         rb.AddForce(ForceJump, ForceMode.Impulse);
+    }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        CanJump = true;
+    }
+
+    void OnCollisionExit(Collision collision)
+    {
+        CanJump = false;
     }
 }
