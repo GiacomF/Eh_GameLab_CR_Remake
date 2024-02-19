@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class GSPlaying : IGameState
 {
+
     public void OnStateEnter()
     {
         UIManager.instance.ShowUI(GameUI.Playing);

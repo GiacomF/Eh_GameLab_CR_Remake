@@ -27,7 +27,7 @@ public class UIPauseMenu : MonoBehaviour, IGameUI
 
             updateActiveGameObjects(GameStateManager.instance.isUnpausingGame);
 
-            GameStateManager.instance.SetCurrentGameState(GameStates.Playing);
+            GSPauseMenu.setPlayingState();
         }
         if (GameStateManager.instance.isUnpausingGame)
         {

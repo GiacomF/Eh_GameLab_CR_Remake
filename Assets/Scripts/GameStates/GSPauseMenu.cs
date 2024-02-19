@@ -20,4 +20,9 @@ public class GSPauseMenu : IGameState
             GameStateManager.instance.isUnpausingGame = true;
         }
     }
+
+    public static void setPlayingState()
+    {
+        GameStateManager.instance.SetCurrentGameState(GameStates.Playing);
+    }
 }

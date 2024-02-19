@@ -6,8 +6,7 @@ public class GSGameOver : IGameState
 {
     public void OnStateEnter()
     {
-        DestroyAllElements();
-        /*UIManager.instance.ShowUI(UIManager.GameUI.GameOver);*/
+        UIManager.instance.ShowUI(GameUI.GameOver);
     }
     public void OnStateExit()
     {
@@ -18,15 +17,5 @@ public class GSGameOver : IGameState
     public static void GoToMainMenu()
     {
         GameStateManager.instance.SetCurrentGameState(GameStates.MainMenu);
-    }
-    private void DestroyAllElements()
-    {
-
-        List<GameObject> resettables = new List<GameObject>();
-
-        for(int i = 0; i < resettables.Count; i++)
-        {
-            Object.Destroy(resettables[i].gameObject);
-        }
     }
 }

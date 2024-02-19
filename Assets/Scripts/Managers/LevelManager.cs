@@ -25,7 +25,7 @@ public class LevelManager : MonoBehaviour
     {
         if (currLevel != null)
         {
-            GameObject.Destroy(currLevel.GetObject());
+            GameObject.Destroy(currLevel.getObject());
         }
         currLevel = GameObject.Instantiate(level, Vector3.zero, Quaternion.identity).GetComponent<ILevel>();
     }

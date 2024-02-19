@@ -2,9 +2,9 @@ using UnityEngine;
 
 public interface ILevel
 {
-    public void Init();
-    public int GetScore();
-    public int GetLevel();
-    public GameObject GetObject();
-    public void DestroyAllElements();
+    public void init();
+    public int getScore();
+    public int getCollectedCoins();
+    public GameObject getObject();
+    public void destroyAllElements();
 }
