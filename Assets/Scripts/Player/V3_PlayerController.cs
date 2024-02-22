@@ -1,13 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
+
 using UnityEngine;
 
 public class V3_PlayerController : MonoBehaviour
 {
     public float MoveDistance = 1;
     public float MoveTime = 0.4f;
-    public float colliderDistCheck = 1.1f;
 
     public bool isIdle = true;
     public bool isMoving = false;
@@ -26,7 +23,7 @@ public class V3_PlayerController : MonoBehaviour
     {
         CanIdle();
         CanMove();
-        Rotating();
+        //Rotating();
     }
 
     void CanIdle()
@@ -69,7 +66,7 @@ public class V3_PlayerController : MonoBehaviour
             }
         }
     }
-
+    /*
     void Rotating()
     {
         if (Input.GetKeyDown(KeyCode.W)) 
@@ -89,7 +86,7 @@ public class V3_PlayerController : MonoBehaviour
             gameObject.transform.rotation = Quaternion.Euler(0, 90, 0); 
         }
     }
-
+    */
     void Moving(Vector3 pos)
     {
         isIdle = false;

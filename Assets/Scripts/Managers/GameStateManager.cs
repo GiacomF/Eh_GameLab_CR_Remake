@@ -21,7 +21,7 @@ public class GameStateManager : MonoBehaviour
 
     private static GameStateManager _instance;
     private Dictionary<GameStates, IGameState> registeredGameStates = new Dictionary<GameStates, IGameState>();
-    private IGameState currentGameState = null;
+    public IGameState currentGameState = null;
 
     public void RegisterState(GameStates gameState, IGameState state)
     {
