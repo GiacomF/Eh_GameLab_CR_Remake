@@ -25,7 +25,6 @@ public class CameraMovement : MonoBehaviour
         {
             if(player.isIdle)
             {
-                Debug.Log("I'm counting!");
                 Timer -= Time.deltaTime;
                 if(Timer <= 0)
                 {
