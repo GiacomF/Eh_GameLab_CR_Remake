@@ -20,7 +20,7 @@ public class UIGameOverMenu : MonoBehaviour, IGameUI
 
     public void Update()
     {
-        highestScore.text = "Top " + LevelManager.instance.highestScore.ToString();
+        highestScore.text = "Top " + LevelManager.instance.getHighestScore().ToString();
     }
 
     public void SetActive(bool active)
