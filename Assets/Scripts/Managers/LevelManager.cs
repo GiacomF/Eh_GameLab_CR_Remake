@@ -19,6 +19,8 @@ public class LevelManager : MonoBehaviour
     public GameObject level;
     public ILevel currLevel;
 
+    public int highestScore = 0;
+
     private static LevelManager _instance;
 
     public void startLevel()

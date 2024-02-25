@@ -6,7 +6,11 @@ public class GSGameOver : IGameState
 {
     public void OnStateEnter()
     {
-        UIManager.instance.ShowUI(GameUI.GameOver);
+        if (LevelManager.instance.currLevel.getScore() > LevelManager.instance.highestScore) 
+        {
+            LevelManager.instance.highestScore = LevelManager.instance.currLevel.getScore();
+        }
+        UIManager.instance.ShowUI(new List<GameUI>() { GameUI.GameOver, GameUI.Playing });
     }
     public void OnStateExit()
     {

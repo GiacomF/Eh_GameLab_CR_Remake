@@ -28,7 +28,6 @@ public class CameraMovement : MonoBehaviour
                 Timer -= Time.deltaTime;
                 if(Timer <= 0)
                 {
-                    Debug.Log("Time's up!");
                     transform.position = Vector3.Lerp(transform.position, transform.position + new Vector3(0,0,cameraKeepsGoing), speed);
                 }
             }
@@ -42,7 +41,6 @@ public class CameraMovement : MonoBehaviour
 
     public void OffCameraCheck()
     {
-        Debug.Log("Player off camera");
         EagleEnemy.getPlayer = true;
     }
 }

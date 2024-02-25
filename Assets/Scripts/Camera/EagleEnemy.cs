@@ -22,7 +22,7 @@ public class EagleEnemy : MonoBehaviour
     {
         if(other.CompareTag("Player"))
         {
-            Debug.Log("Got him!");
+            GameStateManager.instance.SetCurrentGameState(GameStates.GameOver);
             Object.Destroy(other);
         }
     }
