@@ -316,7 +316,7 @@ PrefabInstance:
     m_TransformParent: {fileID: 3814389491488613256}
     m_Modifications:
     - target: {fileID: 2341964972988257045, guid: c79ce2b0b617d50418a37c0baafa7fd9, type: 3}
-      propertyPath: waypoints.Array.data[0]
+      propertyPath: player
       value: 
       objectReference: {fileID: 478257178421708161}
     - target: {fileID: 4346661278665095773, guid: c79ce2b0b617d50418a37c0baafa7fd9, type: 3}

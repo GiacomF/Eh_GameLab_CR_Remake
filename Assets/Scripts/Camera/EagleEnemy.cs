@@ -6,15 +6,14 @@ using UnityEngine;
 public class EagleEnemy : MonoBehaviour
 {
     public bool getPlayer = false;
-    int currentTarget = 0;
     float speed = 0.1f;
-    public Transform[] waypoints;
+    public Transform player;
 
     void Update()
     {
         if(getPlayer)
         {
-            transform.position = Vector3.Lerp(transform.position, waypoints[currentTarget].position, speed);
+            transform.position = Vector3.Lerp(transform.position, player.position, speed);
         }
     }
 
@@ -23,7 +22,7 @@ public class EagleEnemy : MonoBehaviour
         if(other.CompareTag("Player"))
         {
             GameStateManager.instance.SetCurrentGameState(GameStates.GameOver);
-            Object.Destroy(other);
+            other.gameObject.SetActive(false);
         }
     }
 }
