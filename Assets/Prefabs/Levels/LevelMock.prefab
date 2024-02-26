@@ -74,7 +74,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2482316939653426351, guid: 305a55a9012089743bf73736b00e88e5, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -10.443667
+      value: -10
       objectReference: {fileID: 0}
     - target: {fileID: 2482316939653426351, guid: 305a55a9012089743bf73736b00e88e5, type: 3}
       propertyPath: m_LocalRotation.w
@@ -315,6 +315,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3814389491488613256}
     m_Modifications:
+    - target: {fileID: 831395176, guid: 94a9594f19f235a43a7753b063c11a63, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 27.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 831395176, guid: 94a9594f19f235a43a7753b063c11a63, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 25.09
+      objectReference: {fileID: 0}
+    - target: {fileID: 831395176, guid: 94a9594f19f235a43a7753b063c11a63, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 23.3
+      objectReference: {fileID: 0}
     - target: {fileID: 831395177, guid: 94a9594f19f235a43a7753b063c11a63, type: 3}
       propertyPath: m_IsTrigger
       value: 1
@@ -323,6 +335,22 @@ PrefabInstance:
       propertyPath: waypoints.Array.data[0]
       value: 
       objectReference: {fileID: 478257178421708161}
+    - target: {fileID: 1556033322, guid: 94a9594f19f235a43a7753b063c11a63, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -5.26
+      objectReference: {fileID: 0}
+    - target: {fileID: 1556033322, guid: 94a9594f19f235a43a7753b063c11a63, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1556033322, guid: 94a9594f19f235a43a7753b063c11a63, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 5.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 1923799807, guid: 94a9594f19f235a43a7753b063c11a63, type: 3}
+      propertyPath: speed
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1923799807, guid: 94a9594f19f235a43a7753b063c11a63, type: 3}
       propertyPath: player
       value: 
