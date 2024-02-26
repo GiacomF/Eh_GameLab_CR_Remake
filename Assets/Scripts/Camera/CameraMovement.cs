@@ -7,35 +7,34 @@ public class CameraMovement : MonoBehaviour
     public Transform playerTransform;
     public EagleEnemy EagleEnemy;
     public V3_PlayerController player;
-    public float speed;
-    public float Timer;
-    public float maxTimer = 5f;
-    public float cameraKeepsGoing = 0.04f;
-    bool canWin = true;
-    Vector3 offset = new Vector3(5,7,-4);
 
-    void Start()
+    public float baseLerpingSpeed = 0.5f;
+    public float increasedLerpingSpeed = 1.5f;
+
+    public float cameraKeepsGoing = 10f;
+    public float maxPlayerDistance = 4f;
+
+    private float lerpginSpeed;
+
+    private void Start()
     {
-        Timer = maxTimer;
+        lerpginSpeed = baseLerpingSpeed;
     }
 
     void Update()
     {
-        if(canWin)
+        float playerDistance = playerTransform.position.z - transform.position.z;
+
+        if (playerDistance > maxPlayerDistance)
         {
-            if(player.isIdle)
-            {
-                Timer -= Time.deltaTime;
-                if(Timer <= 0)
-                {
-                    transform.position = Vector3.Lerp(transform.position, transform.position + new Vector3(0,0,cameraKeepsGoing), speed);
-                }
-            }
-            else
-            {
-                Timer = maxTimer;
-                transform.position = Vector3.Lerp(transform.position, playerTransform.position + offset, speed);
-            }
+            lerpginSpeed = increasedLerpingSpeed;
+        } else {
+            lerpginSpeed = baseLerpingSpeed;
+        }
+
+        if(!GameStateManager.instance.gameIsPaused)
+        {
+            transform.position = Vector3.Lerp(transform.position, transform.position + new Vector3(0,0,cameraKeepsGoing), lerpginSpeed);
         }
     }
 

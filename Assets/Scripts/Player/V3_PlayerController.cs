@@ -6,14 +6,18 @@ public class V3_PlayerController : MonoBehaviour
     public float MoveDistance = 1;
     public float MoveTime = 0.4f;
 
-    public bool isIdle = true;
-    public bool isMoving = false;
     public bool isJumping = false;
     public bool jumpStart = false;
+    public bool isIdle = true;
+    
     public GameObject character = null;
+    
+    private bool isMoving = false;
+    
     private Renderer visual = null;
-    Vector3 currPos;
+    
     Vector3 movDir;
+
     void Start()
     {
         visual = character.GetComponent<Renderer>();
@@ -21,9 +25,11 @@ public class V3_PlayerController : MonoBehaviour
 
     void Update()
     {
-        CanIdle();
-        CanMove();
-        //Rotating();
+        if (!GameStateManager.instance.gameIsPaused)
+        {
+            CanIdle();
+            CanMove();
+        }
     }
 
     void CanIdle()
@@ -66,27 +72,6 @@ public class V3_PlayerController : MonoBehaviour
             }
         }
     }
-    /*
-    void Rotating()
-    {
-        if (Input.GetKeyDown(KeyCode.W)) 
-        { 
-            gameObject.transform.rotation = Quaternion.Euler(0, 0, 0); 
-        }
-        else if (Input.GetKeyDown(KeyCode.S)) 
-        { 
-            gameObject.transform.rotation = Quaternion.Euler(0, 180, 0); 
-        }
-        else if (Input.GetKeyDown(KeyCode.A)) 
-        { 
-            gameObject.transform.rotation = Quaternion.Euler(0, -90, 0); 
-        }
-        else if (Input.GetKeyDown(KeyCode.D)) 
-        { 
-            gameObject.transform.rotation = Quaternion.Euler(0, 90, 0); 
-        }
-    }
-    */
     void Moving(Vector3 pos)
     {
         isIdle = false;
