@@ -203,25 +203,9 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 831395180, guid: 94a9594f19f235a43a7753b063c11a63, type: 3}
-      propertyPath: waypoints.Array.data[0]
-      value: 
-      objectReference: {fileID: 2482316939653426351, guid: 305a55a9012089743bf73736b00e88e5, type: 3}
-    - target: {fileID: 1923799807, guid: 94a9594f19f235a43a7753b063c11a63, type: 3}
-      propertyPath: player
-      value: 
-      objectReference: {fileID: 2482316939653426350, guid: 305a55a9012089743bf73736b00e88e5, type: 3}
-    - target: {fileID: 1923799807, guid: 94a9594f19f235a43a7753b063c11a63, type: 3}
-      propertyPath: playerTransform
-      value: 
-      objectReference: {fileID: 2482316939653426351, guid: 305a55a9012089743bf73736b00e88e5, type: 3}
     - target: {fileID: 8273569868735586852, guid: 94a9594f19f235a43a7753b063c11a63, type: 3}
       propertyPath: m_Name
       value: MainCamera
-      objectReference: {fileID: 0}
-    - target: {fileID: 8273569868735586852, guid: 94a9594f19f235a43a7753b063c11a63, type: 3}
-      propertyPath: m_TagString
-      value: CameraToDestroy
       objectReference: {fileID: 0}
     - target: {fileID: 8273569868735586857, guid: 94a9594f19f235a43a7753b063c11a63, type: 3}
       propertyPath: m_RootOrder
@@ -380,7 +364,7 @@ PrefabInstance:
     - target: {fileID: 1543718850332437340, guid: 635c6a8c7cb65364a96d3cc3a9924354, type: 3}
       propertyPath: level
       value: 
-      objectReference: {fileID: 1134714567854762174, guid: 626db365e0418ea48b8680041ceba911, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 2580116061538142274, guid: 635c6a8c7cb65364a96d3cc3a9924354, type: 3}
       propertyPath: m_RootOrder
       value: 0

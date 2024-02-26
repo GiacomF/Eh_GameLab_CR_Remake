@@ -9,7 +9,6 @@ public class GSPlaying : IGameState
     {
         UIManager.instance.ShowUI(GameUI.Playing);
         GameStateManager.instance.gameIsPaused = false;
-        GameObject.Destroy(GameObject.FindGameObjectWithTag("CameraToDestroy"));
     }
     public void OnStateExit()
     {
