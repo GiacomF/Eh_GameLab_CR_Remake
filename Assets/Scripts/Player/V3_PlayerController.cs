@@ -11,6 +11,7 @@ public class V3_PlayerController : MonoBehaviour
     public bool isJumping = false;
     public bool jumpStart = false;
     public GameObject character = null;
+    public Transform PlayerSpawn;
     private Renderer visual = null;
     Vector3 currPos;
     Vector3 movDir;
@@ -23,7 +24,7 @@ public class V3_PlayerController : MonoBehaviour
     {
         CanIdle();
         CanMove();
-        Rotating();
+        //Rotating();
     }
 
     void CanIdle()
@@ -66,6 +67,7 @@ public class V3_PlayerController : MonoBehaviour
             }
         }
     }
+    /*
     void Rotating()
     {
         if (Input.GetKeyDown(KeyCode.W)) 
@@ -85,6 +87,7 @@ public class V3_PlayerController : MonoBehaviour
             gameObject.transform.rotation = Quaternion.Euler(0, 90, 0); 
         }
     }
+    */
     void Moving(Vector3 pos)
     {
         isIdle = false;

@@ -23,7 +23,10 @@ public class LevelGenerator : MonoBehaviour
     public bool Generate = false;
     public bool lastTileWasPillar = false;
     public int InitialTiles;
-    public GameObject[] tiles;
+    public int SafePercentage;
+    public int IncreaseDifficultyThreshold = 15;
+    public GameObject[] DangerousTiles;
+    public GameObject[] SafeTiles;
     Vector3 offset = new Vector3(0,0,1);
     public Transform lastGeneratedTile;
 
@@ -43,24 +46,39 @@ public class LevelGenerator : MonoBehaviour
             GenerateLevelTile();
             Generate = false;
             SpawnedTiles ++;
+            if(SpawnedTiles > IncreaseDifficultyThreshold)
+            {
+                SafePercentage -= 3;
+                SpawnedTiles = 0;
+            }
         }
     }
 
     public void GenerateLevelTile()
     {
-        if(lastTileWasPillar)
+        int randomPercentageGenerated = Random.Range(0,101);
+
+        if(randomPercentageGenerated <= SafePercentage)
         {
-            GameObject tile = GameObject.Instantiate(tiles[Random.Range(0,4)], lastGeneratedTile.transform.position + offset, gameObject.transform.rotation, gameObject.transform);
+            GameObject tile = GameObject.Instantiate(SafeTiles[Random.Range(0,SafeTiles.Length)], lastGeneratedTile.transform.position + offset, gameObject.transform.rotation, gameObject.transform);
             lastGeneratedTile = tile.transform;
-            lastTileWasPillar = false;
         }
         else
         {
-            GameObject tile = GameObject.Instantiate(tiles[Random.Range(0,tiles.Length)], lastGeneratedTile.transform.position + offset, gameObject.transform.rotation, gameObject.transform);
-            lastGeneratedTile = tile.transform;
-            if(lastGeneratedTile.CompareTag("Pillars Tile"))
+            if(lastTileWasPillar)
             {
-                lastTileWasPillar = true;
+                GameObject tile = GameObject.Instantiate(DangerousTiles[Random.Range(0,SafeTiles.Length-1)], lastGeneratedTile.transform.position + offset, gameObject.transform.rotation, gameObject.transform);
+                lastGeneratedTile = tile.transform;
+                lastTileWasPillar = false;
+            }
+            else
+            {
+                GameObject tile = GameObject.Instantiate(DangerousTiles[Random.Range(0,DangerousTiles.Length)], lastGeneratedTile.transform.position + offset, gameObject.transform.rotation, gameObject.transform);
+                lastGeneratedTile = tile.transform;
+                if(lastGeneratedTile.CompareTag("Pillars Tile"))
+                {
+                    lastTileWasPillar = true;
+                }
             }
         }
     }
