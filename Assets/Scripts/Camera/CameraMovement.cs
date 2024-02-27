@@ -7,39 +7,46 @@ public class CameraMovement : MonoBehaviour
     public Transform playerTransform;
     public EagleEnemy EagleEnemy;
     public V3_PlayerController player;
+    public float speed;
+    public float Timer;
+    public float maxTimer = 5f;
+    public float cameraKeepsGoing = 0.4f;
+    bool canWin = true;
+    Vector3 offset = new Vector3(6,6,-4);
 
-    public float baseLerpingSpeed = 0.5f;
-    public float increasedLerpingSpeed = 1.5f;
-
-    public float cameraKeepsGoing = 10f;
-    public float maxPlayerDistance = 4f;
-
-    private float lerpginSpeed;
-
-    private void Start()
+    void Start()
     {
-        lerpginSpeed = baseLerpingSpeed;
+        Timer = maxTimer;
+        transform.position = playerTransform.position + offset;
     }
 
     void Update()
     {
-        float playerDistance = playerTransform.position.z - transform.position.z;
-
-        if (playerDistance > maxPlayerDistance)
-        {
-            lerpginSpeed = increasedLerpingSpeed;
-        } else {
-            lerpginSpeed = baseLerpingSpeed;
-        }
-
         if(!GameStateManager.instance.gameIsPaused)
         {
-            transform.position = Vector3.Lerp(transform.position, transform.position + new Vector3(0,0,cameraKeepsGoing), lerpginSpeed);
+            if(canWin)
+            {
+                if(player.isIdle)
+                {
+                    Timer -= Time.deltaTime;
+                    if(Timer <= 0)
+                    {
+                        Debug.Log("Time's up!");
+                        transform.position = Vector3.Lerp(transform.position, transform.position + new Vector3(0,0,cameraKeepsGoing), speed);
+                    }
+                }
+                else
+                {
+                    Timer = maxTimer;
+                    transform.position = Vector3.Lerp(transform.position, playerTransform.position + offset, speed);
+                }
+            }
         }
     }
 
     public void OffCameraCheck()
     {
+        Debug.Log("Player off camera");
         EagleEnemy.getPlayer = true;
     }
 }

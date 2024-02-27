@@ -7,12 +7,13 @@ public class GSPlaying : IGameState
 
     public void OnStateEnter()
     {
-        UIManager.instance.ShowUI(new List<GameUI>() { GameUI.Playing });
+        UIManager.instance.ShowUI(GameUI.Playing);
         GameStateManager.instance.gameIsPaused = false;
+        GameObject.Destroy(GameObject.FindGameObjectWithTag("CameraToDestroy"));
     }
     public void OnStateExit()
     {
-        UIManager.instance.ShowUI(new List<GameUI>() { GameUI.NONE });
+        UIManager.instance.ShowUI(GameUI.NONE);
         GameStateManager.instance.gameIsPaused = true;
     }
     public void OnStateUpdate()

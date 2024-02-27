@@ -25,10 +25,6 @@ public class UIPlaying : MonoBehaviour, IGameUI
 
     public void SetActive(bool active)
     {
-        if (active) 
-        {
-            pauseButton.gameObject.SetActive(true); ;
-        }
         gameObject.SetActive(active);
     }
 

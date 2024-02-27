@@ -7,33 +7,15 @@ public class UIMainMenu : MonoBehaviour, IGameUI
 {
     public GameUI UiType;
 
-    public Image pressedButton;
-    public Image unpressedButton;
-
-    private bool isPressing = false;
-    private bool isUIActive = false;
-    private bool isCounting = false;
-
-    public void Update()
-    {
-        if (isUIActive && !isCounting)
-        {
-            StartCoroutine(count());   
-        }
-        pressedButton.gameObject.SetActive(isPressing);
-        unpressedButton.gameObject.SetActive(!isPressing);
-    }
+    public Button newGameButton;
 
     public void Init()
-    {}
+    {
+        newGameButton.onClick.AddListener(() => { startNewGame(); });
+    }
 
     public void SetActive(bool active)
     {
-        isUIActive = active;
-        if (!active) 
-        {
-            isCounting = false;
-        }
         gameObject.SetActive(active);
     }
 
@@ -42,11 +24,9 @@ public class UIMainMenu : MonoBehaviour, IGameUI
         return UiType;
     }
 
-    private IEnumerator count() 
+    private void startNewGame() 
     {
-        isCounting = true;
-        yield return new WaitForSeconds(0.75f);
-        isPressing = !isPressing;
-        isCounting = false;
+        LevelManager.instance.startLevel();
+        GameStateManager.instance.SetCurrentGameState(GameStates.Playing);
     }
 }
