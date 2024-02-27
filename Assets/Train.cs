@@ -8,6 +8,6 @@ public class Train : MonoBehaviour
 
     void Update()
     {
-        transform.Translate(0,0,Speed);
+        transform.Translate(0,0,Speed*Time.deltaTime);
     }
 }

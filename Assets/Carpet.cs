@@ -7,7 +7,7 @@ public class Carpet : MonoBehaviour
     public float Speed;
     void Update()
     {
-        transform.Translate(0,0,Speed);
+        transform.Translate(0,0,Speed*Time.deltaTime);
     }
 
     void OnTriggerStay(Collider other)

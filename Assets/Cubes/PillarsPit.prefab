@@ -254,9 +254,10 @@ GameObject:
   m_Component:
   - component: {fileID: 5503765119921831691}
   - component: {fileID: 1746690120299366834}
+  - component: {fileID: 4096483520325618002}
   m_Layer: 0
   m_Name: PillarsPit
-  m_TagString: Untagged
+  m_TagString: Pillars Tile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -313,7 +314,21 @@ MonoBehaviour:
   - {fileID: 3075022025919393748}
   IsCart: 0
   IsTrain: 0
-  IsCarpet: 1
+  IsCarpet: 0
+  isPillar: 1
+--- !u!65 &4096483520325618002
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5503765119921831690}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.2, z: 1}
+  m_Center: {x: 0, y: -0.5, z: 0}
 --- !u!1 &6999175746256777346
 GameObject:
   m_ObjectHideFlags: 0

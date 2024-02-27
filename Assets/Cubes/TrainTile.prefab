@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 5656134508049761327}
   m_Layer: 0
   m_Name: TrainTile
-  m_TagString: Untagged
+  m_TagString: Tile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -122,6 +122,8 @@ MonoBehaviour:
   - {fileID: 6198250553791811254}
   IsCart: 0
   IsTrain: 1
+  IsCarpet: 0
+  isPillar: 0
 --- !u!1 &4792084659018754618
 GameObject:
   m_ObjectHideFlags: 0

@@ -14,13 +14,26 @@ public class SpawnAndDir : MonoBehaviour
     float maxTimer = 2;
     float Min;
     float Max;
+    float maxPillars = 5f;
     public bool IsCart = false;
     public bool IsTrain = false;
     public bool IsCarpet = false;
+    public bool isPillar = false;
     void Start()
     {
-        currentSpawn = Random.Range(0,spawns.Length);
-        Spawn();
+        if(isPillar)
+        {   
+            for(int i=0; i < maxPillars; i++)
+            {
+                Debug.Log("I'm spawning");
+                Spawn(Random.Range(0,spawns.Length));
+            }
+        }
+        else
+        {
+            currentSpawn = Random.Range(0,spawns.Length);
+            Spawn(currentSpawn);
+        }
     }
 
     void Update()
@@ -33,7 +46,7 @@ public class SpawnAndDir : MonoBehaviour
             if(timer > maxTimer)
             {
                 timer = 0f;
-                Spawn();
+                Spawn(currentSpawn);
                 maxTimer = Random.Range(Min, Max);
             }
         }
@@ -43,7 +56,7 @@ public class SpawnAndDir : MonoBehaviour
             Min = 4f;
             Max = 12f;
             timer += Time.deltaTime;
-            if(timer >= maxTimer/2)
+            if(timer >= maxTimer-2)
             {
                 Flag.SetActive(true);
             }
@@ -51,27 +64,28 @@ public class SpawnAndDir : MonoBehaviour
             {
                 Flag.SetActive(false);
                 timer = 0f;
-                Spawn();
+                Spawn(currentSpawn);
                 maxTimer = Random.Range(Min, Max);
             }
         }
 
         if(IsCarpet)
         {
-            Min = 1.5f;
-            Max = 4f;
+            Min = 2f;
+            Max = 4.5f;
             timer += Time.deltaTime;
             if(timer > maxTimer)
             {
                 timer = 0f;
-                Spawn();
+                Spawn(currentSpawn);
                 maxTimer = Random.Range(Min, Max);
             }
         }
     }
 
-    void Spawn()
+    void Spawn(int currentSpawn)
     {
         GameObject item = GameObject.Instantiate(ENemyToSpawn, spawns[currentSpawn].position, spawns[currentSpawn].rotation);
+        item.transform.SetParent(gameObject.transform);
     }
 }
