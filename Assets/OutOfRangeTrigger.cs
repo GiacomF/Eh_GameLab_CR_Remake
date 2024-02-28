@@ -10,7 +10,7 @@ public class OutOfRangeTrigger : MonoBehaviour
         if(other.CompareTag("Tile") || other.CompareTag("Pillars Tile"))
         {
             Destroy(other.gameObject);
-            LevelGenerator.instance.GenerateLevelTile();
+            LevelScript.instance.GenerateLevelTile();
             Debug.Log("Tile impacted");
         }
     }

@@ -10,11 +10,17 @@ public class Carpet : MonoBehaviour
         transform.Translate(0,0,Speed*Time.deltaTime);
     }
 
-    void OnTriggerStay(Collider other)
+    void OnTriggerEnter(Collider other)
     {
         if(other.CompareTag("Player"))
         {
             other.transform.SetParent(gameObject.transform);
+            Debug.Log("On carpet");
         }
+    }
+
+    void OnTriggerExit(Collider other)
+    {
+        other.transform.SetParent(null);
     }
 }

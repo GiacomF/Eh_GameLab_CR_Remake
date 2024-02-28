@@ -12,7 +12,7 @@ public class CameraMovement : MonoBehaviour
     public float maxTimer = 5f;
     public float cameraKeepsGoing = 0.4f;
     bool canWin = true;
-    Vector3 offset = new Vector3(6,6,-4);
+    Vector3 offset = new Vector3(4,6,-4);
 
     void Start()
     {
@@ -32,13 +32,13 @@ public class CameraMovement : MonoBehaviour
                     if(Timer <= 0)
                     {
                         Debug.Log("Time's up!");
-                        transform.position = Vector3.Lerp(transform.position, transform.position + new Vector3(0,0,cameraKeepsGoing), speed);
+                        transform.position = Vector3.Lerp(transform.position, transform.position + new Vector3(0,0,cameraKeepsGoing), speed*Time.deltaTime);
                     }
                 }
                 else
                 {
                     Timer = maxTimer;
-                    transform.position = Vector3.Lerp(transform.position, playerTransform.position + offset, speed);
+                    transform.position = Vector3.Lerp(transform.position, playerTransform.position + offset, speed*Time.deltaTime);
                 }
             }
         }

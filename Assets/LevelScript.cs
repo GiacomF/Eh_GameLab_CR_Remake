@@ -4,21 +4,20 @@ using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class LevelGenerator : MonoBehaviour
+public class LevelScript : MonoBehaviour
 {
-    public static LevelGenerator instance
+    public static LevelScript instance
     {
         get
         {
-            if(_instance == null)
-                _instance = FindObjectOfType<LevelGenerator>();
-            if(_instance == null)
-                Debug.LogError("GameStateManager not found, can't create singleton object");
+            if (_instance == null)
+                _instance = FindObjectOfType<LevelScript>();
+            if (_instance == null)
+                Debug.LogError("LevelManager not found, can't create singleton object");
             return _instance;
         }
     }
-    private static LevelGenerator _instance;
-
+    private static LevelScript _instance;
     public int SpawnedTiles;
     public bool Generate = false;
     public bool lastTileWasPillar = false;

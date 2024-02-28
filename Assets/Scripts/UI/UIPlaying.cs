@@ -17,12 +17,6 @@ public class UIPlaying : MonoBehaviour, IGameUI
         pauseButton.onClick.AddListener(() => { GameStateManager.instance.SetCurrentGameState(GameStates.PauseMenu); });
     }
 
-    public void Update()
-    {
-        score.text = LevelManager.instance.currLevel.getScore().ToString();
-        collectedCoins.text = LevelManager.instance.currLevel.getCollectedCoins().ToString();
-    }
-
     public void SetActive(bool active)
     {
         gameObject.SetActive(active);

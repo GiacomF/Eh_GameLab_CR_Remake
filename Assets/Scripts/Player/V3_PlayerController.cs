@@ -1,4 +1,5 @@
 
+using System.Runtime.InteropServices.WindowsRuntime;
 using UnityEngine;
 
 public class V3_PlayerController : MonoBehaviour
@@ -93,7 +94,17 @@ public class V3_PlayerController : MonoBehaviour
         isIdle = false;
         isMoving = false;
         jumpStart = false;
-        LeanTween.move(this.gameObject, pos, MoveTime).setOnComplete(MoveComplete);
+
+        LeanTween.move(this.gameObject, RoundVector(pos), MoveTime).setOnComplete(MoveComplete);
+    }
+
+    Vector3 RoundVector(Vector3 input)
+    {
+        Vector3 output;
+        output.x = Mathf.Round(input.x);
+        output.y = Mathf.Round(input.y);
+        output.z = Mathf.Round(input.z);
+        return output;
     }
     
     void MoveComplete()

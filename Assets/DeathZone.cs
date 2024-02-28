@@ -9,6 +9,7 @@ public class DeathZone : MonoBehaviour
     {
         if(other.CompareTag("Player"))
         {
+            Time.timeScale = 0;
             Debug.Log("Game Over");
         }
     }

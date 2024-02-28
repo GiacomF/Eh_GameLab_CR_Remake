@@ -26,7 +26,7 @@ public class UIMainMenu : MonoBehaviour, IGameUI
 
     private void startNewGame() 
     {
-        LevelManager.instance.startLevel();
+        //LevelManager.instance.StartLevel();
         GameStateManager.instance.SetCurrentGameState(GameStates.Playing);
     }
 }
