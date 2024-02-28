@@ -13,7 +13,10 @@ public class AnimatorController : MonoBehaviour
     }
 
     void Update()
-    {   
+    {
+
+        if (GameStateManager.instance.gameIsPaused) return;
+
         if(playerController.jumpStart)
         {
             animator.SetBool("jumpStart", true);
