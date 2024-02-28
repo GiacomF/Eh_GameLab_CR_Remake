@@ -11,6 +11,8 @@ public class V3_PlayerController : MonoBehaviour
     public bool isMoving = false;
     public bool isJumping = false;
     public bool jumpStart = false;
+    public bool wasHit = false;
+    public bool isInvincible = false;
     public GameObject character = null;
     public Transform PlayerSpawn;
     private Renderer visual = null;
@@ -23,9 +25,12 @@ public class V3_PlayerController : MonoBehaviour
 
     void Update()
     {
-        CanIdle();
-        CanMove();
-        //Rotating();
+        if(!wasHit)
+        {
+            CanIdle();
+            CanMove();
+            //Rotating();
+        }
     }
 
     void CanIdle()
@@ -117,10 +122,14 @@ public class V3_PlayerController : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("Enemy"))
+        if(!isInvincible)
         {
-            GameStateManager.instance.SetCurrentGameState(GameStates.GameOver);
-            Debug.Log("GameOver");
+            if(other.CompareTag("Enemy"))
+            {
+                wasHit = true;
+                GameStateManager.instance.SetCurrentGameState(GameStates.GameOver);
+                Debug.Log("was hit");
+            }
         }
     }
 }

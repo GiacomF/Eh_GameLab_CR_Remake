@@ -5,12 +5,13 @@ using UnityEngine;
 
 public class DeathZone : MonoBehaviour
 {
+    public AudioClip GameOverSound;
     void OnTriggerEnter(Collider other)
     {
         if(other.CompareTag("Player"))
         {
             Time.timeScale = 0;
-            Debug.Log("Game Over");
+            AudioSource.PlayClipAtPoint(GameOverSound, gameObject.transform.position);
         }
     }
 }

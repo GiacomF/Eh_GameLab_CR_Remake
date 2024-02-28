@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 72ea0ea40ae577b409d4a48b3dda55b4
+guid: 60e7c5b6eb523e2409b83cf60d73e2ce
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
   defaultReferences:
-  - GameOverSound: {fileID: 8300000, guid: 46ebdc5544d9e254f975772c39698835, type: 3}
+  - Coin: {fileID: 5184325379874990013, guid: cb07990434502e440a1f657b2d8aa6cf, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

@@ -35,7 +35,6 @@ public class UIManager : MonoBehaviour
     {
         UItoRegister.Init();
         registeredUIs.Add(UItype, UItoRegister);
-
     }
 
     public void ShowUI(GameUI UIType)

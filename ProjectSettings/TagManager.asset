@@ -8,6 +8,7 @@ TagManager:
   - Carpet
   - Tile
   - Pillars Tile
+  - CameraToDestroy
   layers:
   - Default
   - TransparentFX

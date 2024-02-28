@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class AnimatorController : MonoBehaviour
 {
+    public BoxCollider playerCollider;
     public V3_PlayerController playerController;
     private Animator animator;
 
@@ -27,8 +28,13 @@ public class AnimatorController : MonoBehaviour
             animator.SetBool("jump", false);
             animator.SetBool("jumpStart", false);
         }
+        
+        if(playerController.wasHit)
+        {
+            animator.SetBool("wasHit", true);
+            playerCollider.size = new Vector3(playerCollider.size.x, 0.2f, playerCollider.size.z);
+        }
 
-        if(!playerController.isIdle) return;
 
         if (Input.GetKeyDown(KeyCode.W)) { gameObject.transform.rotation = Quaternion.Euler(0, 0, 0); }
         if (Input.GetKeyDown(KeyCode.S)) { gameObject.transform.rotation = Quaternion.Euler(0, 180, 0); }

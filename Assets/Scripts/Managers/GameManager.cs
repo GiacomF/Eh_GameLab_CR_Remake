@@ -36,7 +36,9 @@ public class GameManager : MonoBehaviour
     }
 
     void Update()
-    {}
+    {
+        Debug.Log(GameStateManager.instance.currentGameState);
+    }
 
     public void CloseApplication()
     {

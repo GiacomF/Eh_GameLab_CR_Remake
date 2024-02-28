@@ -24,10 +24,12 @@ public class LevelScript : MonoBehaviour
     public int InitialTiles;
     public int SafePercentage;
     public int IncreaseDifficultyThreshold = 15;
+    public int CoinsCollected;
     public GameObject[] DangerousTiles;
     public GameObject[] SafeTiles;
     Vector3 offset = new Vector3(0,0,1);
     public Transform lastGeneratedTile;
+    public Transform DestroyableObject;
 
     void Start()
     {
@@ -59,20 +61,20 @@ public class LevelScript : MonoBehaviour
 
         if(randomPercentageGenerated <= SafePercentage)
         {
-            GameObject tile = GameObject.Instantiate(SafeTiles[Random.Range(0,SafeTiles.Length)], lastGeneratedTile.transform.position + offset, gameObject.transform.rotation, gameObject.transform);
+            GameObject tile = GameObject.Instantiate(SafeTiles[Random.Range(0,SafeTiles.Length)], lastGeneratedTile.transform.position + offset, gameObject.transform.rotation, DestroyableObject);
             lastGeneratedTile = tile.transform;
         }
         else
         {
             if(lastTileWasPillar)
             {
-                GameObject tile = GameObject.Instantiate(DangerousTiles[Random.Range(0,SafeTiles.Length-1)], lastGeneratedTile.transform.position + offset, gameObject.transform.rotation, gameObject.transform);
+                GameObject tile = GameObject.Instantiate(DangerousTiles[Random.Range(0,SafeTiles.Length-1)], lastGeneratedTile.transform.position + offset, gameObject.transform.rotation, DestroyableObject);
                 lastGeneratedTile = tile.transform;
                 lastTileWasPillar = false;
             }
             else
             {
-                GameObject tile = GameObject.Instantiate(DangerousTiles[Random.Range(0,DangerousTiles.Length)], lastGeneratedTile.transform.position + offset, gameObject.transform.rotation, gameObject.transform);
+                GameObject tile = GameObject.Instantiate(DangerousTiles[Random.Range(0,DangerousTiles.Length)], lastGeneratedTile.transform.position + offset, gameObject.transform.rotation, DestroyableObject);
                 lastGeneratedTile = tile.transform;
                 if(lastGeneratedTile.CompareTag("Pillars Tile"))
                 {
@@ -80,5 +82,10 @@ public class LevelScript : MonoBehaviour
                 }
             }
         }
+    }
+
+    public void DestroyLevel()
+    {
+        Destroy(DestroyableObject);
     }
 }
