@@ -25,7 +25,6 @@ public class SpawnAndDir : MonoBehaviour
         {   
             for(int i=0; i < maxPillars; i++)
             {
-                Debug.Log("I'm spawning");
                 Spawn(Random.Range(0,spawns.Length));
             }
         }

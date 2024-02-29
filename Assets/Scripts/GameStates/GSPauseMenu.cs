@@ -6,11 +6,13 @@ public class GSPauseMenu : IGameState
 {
     public void OnStateEnter()
     {
+        Time.timeScale = 0;
         GameStateManager.instance.gameIsPaused = true;
         UIManager.instance.ShowUI(new List<GameUI>() { GameUI.PauseMenu });
     }
     public void OnStateExit()
     {
+        Time.timeScale = 1;
         UIManager.instance.ShowUI(new List<GameUI>() { GameUI.NONE });
     }
     public void OnStateUpdate()

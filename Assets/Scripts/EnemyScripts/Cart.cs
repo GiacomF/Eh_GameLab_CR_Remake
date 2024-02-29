@@ -8,6 +8,6 @@ public class Cart : MonoBehaviour
     public float Speed;
     void Update()
     {
-        transform.Translate(0,0,Speed*Time.deltaTime);
+        transform.Translate(0, 0, Speed * Time.deltaTime);
     }
 }

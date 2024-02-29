@@ -333,6 +333,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: OutOfBoundscheck
       objectReference: {fileID: 0}
+    - target: {fileID: 8902812225063825892, guid: d772aeb5341845d49947ce0ca1b3d923, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d772aeb5341845d49947ce0ca1b3d923, type: 3}
 --- !u!4 &6236566987899526353 stripped

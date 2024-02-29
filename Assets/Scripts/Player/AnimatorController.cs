@@ -15,13 +15,6 @@ public class AnimatorController : MonoBehaviour
 
     void Update()
     {
-        if(playerController.wasHit == true)
-        {
-            Debug.Log("animation trigger");
-            animator.SetBool("wasHit", true);
-            playerCollider.size = new Vector3(playerCollider.size.x, 0.2f, playerCollider.size.z);
-        }
-
         if (GameStateManager.instance.gameIsPaused) return;
 
         if(playerController.jumpStart)
@@ -44,5 +37,11 @@ public class AnimatorController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.S)) { gameObject.transform.rotation = Quaternion.Euler(0, 180, 0); }
         if (Input.GetKeyDown(KeyCode.A)) { gameObject.transform.rotation = Quaternion.Euler(0, -90, 0); }
         if (Input.GetKeyDown(KeyCode.D)) { gameObject.transform.rotation = Quaternion.Euler(0, 90, 0); }
+    }
+
+    public void splatPlayer() 
+    {
+        animator.SetBool("wasHit", true);
+        playerCollider.size = new Vector3(playerCollider.size.x, 0.2f, playerCollider.size.z);
     }
 }

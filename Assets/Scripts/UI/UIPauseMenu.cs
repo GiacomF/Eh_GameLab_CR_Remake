@@ -35,7 +35,7 @@ public class UIPauseMenu : MonoBehaviour, IGameUI
 
             int roundedTimer = Mathf.CeilToInt(unpauseTimer);
             countDownText.text = roundedTimer.ToString();
-            unpauseTimer -= Time.deltaTime;
+            unpauseTimer -= Time.unscaledDeltaTime;
         }
     }
 

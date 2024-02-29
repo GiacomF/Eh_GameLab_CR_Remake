@@ -10,7 +10,6 @@ public class DeathZone : MonoBehaviour
     {
         if(other.CompareTag("Player"))
         {
-            Time.timeScale = 0;
             AudioSource.PlayClipAtPoint(GameOverSound, gameObject.transform.position);
             GameStateManager.instance.SetCurrentGameState(GameStates.GameOver);
         }

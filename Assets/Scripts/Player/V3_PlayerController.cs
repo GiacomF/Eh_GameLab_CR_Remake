@@ -11,21 +11,20 @@ public class V3_PlayerController : MonoBehaviour
     public bool isMoving = false;
     public bool isJumping = false;
     public bool jumpStart = false;
-    public bool wasHit = false;
     public bool isInvincible = false;
     public GameObject character = null;
     public Transform PlayerSpawn;
-    private Renderer visual = null;
-    Vector3 currPos;
     Vector3 movDir;
+
+    private AnimatorController animatorController;
     void Start()
     {
-        visual = character.GetComponent<Renderer>();
+        animatorController = gameObject.GetComponentInChildren<AnimatorController>();
     }
 
     void Update()
     {
-        if(!wasHit)
+        if(!GameStateManager.instance.gameIsPaused)
         {
             CanIdle();
             CanMove();
@@ -105,9 +104,8 @@ public class V3_PlayerController : MonoBehaviour
         {
             if(other.CompareTag("Enemy"))
             {
-                wasHit = true;
+                animatorController.splatPlayer();
                 GameStateManager.instance.SetCurrentGameState(GameStates.GameOver);
-                Debug.Log("was hit");
             }
         }
     }

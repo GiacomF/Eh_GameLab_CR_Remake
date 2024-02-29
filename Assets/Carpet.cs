@@ -15,12 +15,14 @@ public class Carpet : MonoBehaviour
         if(other.CompareTag("Player"))
         {
             other.transform.SetParent(gameObject.transform);
-            Debug.Log("On carpet");
         }
     }
 
     void OnTriggerExit(Collider other)
     {
-        other.transform.SetParent(null);
+        if (other.CompareTag("Player")) 
+        { 
+            other.transform.SetParent(LevelManager.instance.currLevel.getObject().transform);
+        }
     }
 }

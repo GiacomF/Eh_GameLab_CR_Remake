@@ -21,7 +21,6 @@ public class OffScreenTrigger : MonoBehaviour
 
         if (other.CompareTag("Tile"))
         {
-            Debug.Log("impacted");
             LevelScript.instance.Generate = true;
         }
     }
