@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1975395961096750000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.55, y: 0, z: 2.91}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -44,7 +44,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1975395961096750000}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 0.25, z: 1}
@@ -63,10 +63,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   groundBreaking: {fileID: 8300000, guid: 5fae6f2e99b2840419f797b28894dd24, type: 3}
   mustSplit: 0
-  timer: 4
+  timeToSplit: 1
   half1: {fileID: 1975395962377693629}
   half2: {fileID: 1975395962193912846}
-  coll: {fileID: 1975395962834086218}
+  coll: {fileID: 1975395962834086216}
 --- !u!1 &1975395962193912846
 GameObject:
   m_ObjectHideFlags: 0
