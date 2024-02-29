@@ -17,7 +17,10 @@ public class Level : MonoBehaviour, ILevel
     {
         return collectedCoins;
     }
-
+    public void setCollectedCoins(int value)
+    {
+        collectedCoins = value;
+    }
     public GameObject getObject()
     {
         return gameObject;
@@ -26,6 +29,10 @@ public class Level : MonoBehaviour, ILevel
     public int getScore()
     {
         return currentScore;
+    }
+    public void setScore(int newScore)
+    {
+        currentScore = newScore;
     }
     public void init()
     {
