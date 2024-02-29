@@ -218,6 +218,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: UIContainer
       objectReference: {fileID: 0}
+    - target: {fileID: 6846649135390310124, guid: 707fe293f24d28d4584ec0234050eb9b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 707fe293f24d28d4584ec0234050eb9b, type: 3}
 --- !u!224 &289673590 stripped
