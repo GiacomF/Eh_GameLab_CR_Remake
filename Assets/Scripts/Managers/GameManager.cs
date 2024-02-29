@@ -35,11 +35,6 @@ public class GameManager : MonoBehaviour
         GameStateManager.instance.SetCurrentGameState(startingState);
     }
 
-    void Update()
-    {
-        Debug.Log(GameStateManager.instance.currentGameState);
-    }
-
     public void CloseApplication()
     {
         Application.Quit();
