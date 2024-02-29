@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b35c47e7b933fee4797e03d352e163a5
+guid: 775b6ad5c2769124fb21e7edf4989020
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
@@ -7,13 +7,8 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Material.001
-    second: {fileID: 2100000, guid: 6e97de5d1d1384e4a95c64ca8ba0759f, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: decorazione
-    second: {fileID: 2100000, guid: 6144a41698ce55a4c9a3693a33027c5d, type: 2}
+      name: Purple_carpet_texture
+    second: {fileID: 2100000, guid: 981b3d278d5830e46af7ec1601cf01e0, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
