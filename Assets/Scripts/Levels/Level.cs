@@ -4,22 +4,11 @@ using UnityEngine;
 
 public class Level : MonoBehaviour, ILevel
 {
-
-    private int collectedCoins;
     private int currentScore;
 
     public void destroyAllElements()
     {
        Debug.Log("Ok distruggo robba!");
-    }
-
-    public int getCollectedCoins()
-    {
-        return collectedCoins;
-    }
-    public void setCollectedCoins(int value)
-    {
-        collectedCoins = value;
     }
     public GameObject getObject()
     {
@@ -37,6 +26,5 @@ public class Level : MonoBehaviour, ILevel
     public void init()
     {
         currentScore = 0;
-        collectedCoins = 0;
     }
 }

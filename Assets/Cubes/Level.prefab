@@ -1162,6 +1162,10 @@ PrefabInstance:
       propertyPath: m_Mass
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 1903540301, guid: 305a55a9012089743bf73736b00e88e5, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2482316939653426345, guid: 305a55a9012089743bf73736b00e88e5, type: 3}
       propertyPath: m_Name
       value: Frog 1
@@ -1213,6 +1217,10 @@ PrefabInstance:
     - target: {fileID: 2482316939653426351, guid: 305a55a9012089743bf73736b00e88e5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5721212338036617450, guid: 305a55a9012089743bf73736b00e88e5, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 305a55a9012089743bf73736b00e88e5, type: 3}

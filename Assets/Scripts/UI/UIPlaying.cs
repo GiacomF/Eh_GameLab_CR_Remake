@@ -20,7 +20,7 @@ public class UIPlaying : MonoBehaviour, IGameUI
     public void Update()
     {
         score.text = LevelManager.instance.currLevel.getScore().ToString();
-        collectedCoins.text = LevelManager.instance.currLevel.getCollectedCoins().ToString();
+        collectedCoins.text = LevelManager.instance.getCollectedCoins().ToString();
     }
 
     public void SetActive(bool active)

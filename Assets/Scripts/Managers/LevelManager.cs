@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.PlasticSCM.Editor.WebApi;
 using UnityEngine;
 
 public class LevelManager : MonoBehaviour
@@ -20,6 +21,7 @@ public class LevelManager : MonoBehaviour
     public ILevel currLevel;
 
     private int highestScore = 0;
+    private int collcetedCoins = 0;
 
     private static LevelManager _instance;
 
@@ -31,6 +33,16 @@ public class LevelManager : MonoBehaviour
     public int getHighestScore() 
     {
         return highestScore;
+    }
+
+    public int getCollectedCoins()
+    {
+        return collcetedCoins;
+    }
+
+    public void increaseCoins(int coins)
+    {
+        collcetedCoins += coins;
     }
 
     public void startLevel()

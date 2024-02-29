@@ -4,7 +4,7 @@ public interface ILevel
 {
     public void init();
     public int getScore();
-    public int getCollectedCoins();
+    public void setScore(int newScore);
     public GameObject getObject();
     public void destroyAllElements();
 }
