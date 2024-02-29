@@ -19,9 +19,9 @@ public class Level : MonoBehaviour, ILevel
     {
         return currentScore;
     }
-    public void setScore(int newScore)
+    public void increaseScore(int value)
     {
-        currentScore = newScore;
+        currentScore += value;
     }
     public void init()
     {
