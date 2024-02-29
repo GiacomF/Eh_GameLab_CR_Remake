@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using JetBrains.Annotations;
 using UnityEngine;
 
 public class GSGameOver : IGameState
 {
     public void OnStateEnter()
     {
+
         if (LevelManager.instance.currLevel.getScore() > LevelManager.instance.getHighestScore()) 
         {
             LevelManager.instance.setHighestScore(LevelManager.instance.currLevel.getScore());

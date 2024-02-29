@@ -29,7 +29,6 @@ public class V3_PlayerController : MonoBehaviour
         {
             CanIdle();
             CanMove();
-            //Rotating();
         }
     }
 
@@ -73,27 +72,7 @@ public class V3_PlayerController : MonoBehaviour
             }
         }
     }
-    /*
-    void Rotating()
-    {
-        if (Input.GetKeyDown(KeyCode.W)) 
-        { 
-            gameObject.transform.rotation = Quaternion.Euler(0, 0, 0); 
-        }
-        else if (Input.GetKeyDown(KeyCode.S)) 
-        { 
-            gameObject.transform.rotation = Quaternion.Euler(0, 180, 0); 
-        }
-        else if (Input.GetKeyDown(KeyCode.A)) 
-        { 
-            gameObject.transform.rotation = Quaternion.Euler(0, -90, 0); 
-        }
-        else if (Input.GetKeyDown(KeyCode.D)) 
-        { 
-            gameObject.transform.rotation = Quaternion.Euler(0, 90, 0); 
-        }
-    }
-    */
+
     void Moving(Vector3 pos)
     {
         isIdle = false;

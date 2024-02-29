@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class SpawnAndDir : MonoBehaviour
 {
-    public GameObject ENemyToSpawn;
+    public GameObject[] ENemyToSpawn;
     public GameObject Flag;
     public Transform[] spawns;
     int currentSpawn;
@@ -85,7 +85,7 @@ public class SpawnAndDir : MonoBehaviour
 
     void Spawn(int currentSpawn)
     {
-        GameObject item = GameObject.Instantiate(ENemyToSpawn, spawns[currentSpawn].position, spawns[currentSpawn].rotation);
+        GameObject item = GameObject.Instantiate(ENemyToSpawn[0], spawns[currentSpawn].position, spawns[currentSpawn].rotation);
         item.transform.SetParent(gameObject.transform);
     }
 }

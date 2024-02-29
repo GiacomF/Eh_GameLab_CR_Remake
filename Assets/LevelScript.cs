@@ -42,7 +42,7 @@ public class LevelScript : MonoBehaviour
     {
         Debug.Log(lastGeneratedTile);
 
-        if(Generate)
+        if(Generate == true)
         {
             GenerateLevelTile();
             Generate = false;

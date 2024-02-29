@@ -10,7 +10,6 @@ public class CoinScript : MonoBehaviour
         if(other.CompareTag("Player"))
         {
             Destroy(gameObject);
-            LevelScript.instance.CoinsCollected++;
             AudioSource.PlayClipAtPoint(CoinSound, gameObject.transform.position);
         }
     }

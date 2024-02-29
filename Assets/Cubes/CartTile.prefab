@@ -199,7 +199,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 876d46ea135d04f468e6e3cb2e541ad2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ENemyToSpawn: {fileID: 7940832425496588888, guid: efe41dcece2fd1047b38a0a5acc7a940, type: 3}
+  ENemyToSpawn:
+  - {fileID: 7940832425496588888, guid: efe41dcece2fd1047b38a0a5acc7a940, type: 3}
+  - {fileID: 7940832425496588888, guid: efe41dcece2fd1047b38a0a5acc7a940, type: 3}
   Flag: {fileID: 0}
   spawns:
   - {fileID: 2861054077847730899}

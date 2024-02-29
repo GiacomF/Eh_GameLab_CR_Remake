@@ -15,6 +15,12 @@ public class AnimatorController : MonoBehaviour
 
     void Update()
     {
+        if(playerController.wasHit == true)
+        {
+            Debug.Log("animation trigger");
+            animator.SetBool("wasHit", true);
+            playerCollider.size = new Vector3(playerCollider.size.x, 0.2f, playerCollider.size.z);
+        }
 
         if (GameStateManager.instance.gameIsPaused) return;
 
@@ -32,11 +38,6 @@ public class AnimatorController : MonoBehaviour
             animator.SetBool("jumpStart", false);
         }
         
-        if(playerController.wasHit)
-        {
-            animator.SetBool("wasHit", true);
-            playerCollider.size = new Vector3(playerCollider.size.x, 0.2f, playerCollider.size.z);
-        }
 
 
         if (Input.GetKeyDown(KeyCode.W)) { gameObject.transform.rotation = Quaternion.Euler(0, 0, 0); }
