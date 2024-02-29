@@ -28,7 +28,7 @@ public class UIManager : MonoBehaviour
         {
             RegisterUI(enumeratedUi.GetUIType(), enumeratedUi);
         }
-        ShowUI(GameUI.NONE);
+        ShowUI(new List<GameUI>() { GameUI.NONE });
     }
 
     public void RegisterUI(GameUI UItype, IGameUI UItoRegister)
@@ -37,11 +37,11 @@ public class UIManager : MonoBehaviour
         registeredUIs.Add(UItype, UItoRegister);
     }
 
-    public void ShowUI(GameUI UIType)
+    public void ShowUI(List<GameUI> UITypes)
     {
         foreach (KeyValuePair<GameUI, IGameUI> kvp in registeredUIs)
         {
-            kvp.Value.SetActive(kvp.Key == UIType);
+            kvp.Value.SetActive(UITypes.Contains(kvp.Key));
         }
     }
 }

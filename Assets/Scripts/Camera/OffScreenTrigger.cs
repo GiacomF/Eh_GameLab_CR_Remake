@@ -7,6 +7,9 @@ public class OffScreenTrigger : MonoBehaviour
     public CameraMovement gameCamera;
     void OnTriggerEnter(Collider other)
     {
-        gameCamera.OffCameraCheck();
+        if (other.CompareTag("Player")) 
+        {
+            gameCamera.OffCameraCheck();
+        }
     }
 }
