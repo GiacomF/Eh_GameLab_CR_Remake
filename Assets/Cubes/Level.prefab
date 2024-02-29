@@ -1132,9 +1132,10 @@ MonoBehaviour:
   CoinsCollected: 0
   DangerousTiles:
   - {fileID: 4707032417555090943, guid: 4782ebb1ef16bd14198ad3475721fb61, type: 3}
-  - {fileID: 4707032417555090943, guid: 334be4ffc454fb741b2bad42d7bd2c1b, type: 3}
+  - {fileID: 4707032417555090943, guid: 327c07a88b10c074e9ffc1d0b8940d07, type: 3}
   - {fileID: 5503765119921831690, guid: e553e622f17df2a449ff114de7f5f596, type: 3}
   - {fileID: 5503765119921831690, guid: 66b15f8e7c7d50547a971b400e6626d1, type: 3}
+  - {fileID: 4707032417555090943, guid: 093e2ce9443506f4d94c981eeafde911, type: 3}
   SafeTiles:
   - {fileID: 5372398941930074062, guid: be54c8dcbf2aa5e4da5d05501b6fbbaa, type: 3}
   lastGeneratedTile: {fileID: 8271317602003189254}
