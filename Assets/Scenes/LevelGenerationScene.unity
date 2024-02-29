@@ -130,14 +130,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 478349604, guid: 707fe293f24d28d4584ec0234050eb9b, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1934028048373932325, guid: 707fe293f24d28d4584ec0234050eb9b, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1934028048595986765, guid: 707fe293f24d28d4584ec0234050eb9b, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -225,10 +217,6 @@ PrefabInstance:
     - target: {fileID: 1934028048595986769, guid: 707fe293f24d28d4584ec0234050eb9b, type: 3}
       propertyPath: m_Name
       value: UIContainer
-      objectReference: {fileID: 0}
-    - target: {fileID: 7250107869147905679, guid: 707fe293f24d28d4584ec0234050eb9b, type: 3}
-      propertyPath: m_CullTransparentMesh
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 707fe293f24d28d4584ec0234050eb9b, type: 3}
