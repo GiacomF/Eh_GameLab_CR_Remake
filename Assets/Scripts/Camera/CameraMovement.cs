@@ -25,7 +25,7 @@ public class CameraMovement : MonoBehaviour
     {
         float playerDistance = playerTransform.position.z - transform.position.z;
 
-        if (playerDistance > maxPlayerDistance/2)
+        if (playerDistance > maxPlayerDistance)
         {
             lerpginSpeed = increasedLerpingSpeed;
         } else {
@@ -34,7 +34,7 @@ public class CameraMovement : MonoBehaviour
 
         if(!GameStateManager.instance.gameIsPaused)
         {
-            transform.position = Vector3.Lerp(transform.position, transform.position + new Vector3(0,0,cameraKeepsGoing), lerpginSpeed*Time.deltaTime);
+            transform.position = Vector3.Lerp(transform.position, transform.position + new Vector3(0,0,cameraKeepsGoing), lerpginSpeed * Time.deltaTime);
         }
     }
 
