@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7109659307767393979}
   - component: {fileID: 1621224738}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SnakeObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -112,6 +112,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 25be76fa4517c944e91c69c1abe8cfc7, type: 3}
       propertyPath: m_Name
       value: Cobra2
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 25be76fa4517c944e91c69c1abe8cfc7, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 25be76fa4517c944e91c69c1abe8cfc7, type: 3}

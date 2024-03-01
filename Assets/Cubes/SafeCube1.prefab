@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7695696218870923679}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Spawn (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40,7 +40,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3867002969525543918}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Spawn (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -71,7 +71,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8725653030436139207}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Spawn (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -102,7 +102,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6803341999649079109}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Spawn (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -133,7 +133,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4536541497319341237}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Spawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -164,7 +164,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6745428884151194581}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Spanws
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -206,7 +206,7 @@ GameObject:
   - component: {fileID: 5372398941930074060}
   - component: {fileID: 5372398941930074063}
   - component: {fileID: 6265171821492402314}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SafeCube1
   m_TagString: Tile
   m_Icon: {fileID: 0}
@@ -332,7 +332,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3281355388626355281}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Spawn (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -363,7 +363,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 167387220669050370}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Spawn (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -439,6 +439,10 @@ PrefabInstance:
     - target: {fileID: 2679281566186649150, guid: 38f6d26e38d362c41b22fa83689199ff, type: 3}
       propertyPath: m_Name
       value: ExploreTrigger
+      objectReference: {fileID: 0}
+    - target: {fileID: 2679281566186649150, guid: 38f6d26e38d362c41b22fa83689199ff, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 38f6d26e38d362c41b22fa83689199ff, type: 3}
