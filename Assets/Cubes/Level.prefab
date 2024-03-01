@@ -1465,7 +1465,7 @@ PrefabInstance:
       objectReference: {fileID: 7932309723745303897}
     - target: {fileID: 8359643992988513182, guid: b8888155a83ca6940adff80383969f58, type: 3}
       propertyPath: baseLerpingSpeed
-      value: 0.1
+      value: 0.75
       objectReference: {fileID: 0}
     - target: {fileID: 8359643992988513182, guid: b8888155a83ca6940adff80383969f58, type: 3}
       propertyPath: cameraKeepsGoing
