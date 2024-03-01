@@ -80,7 +80,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Collectibles:
   - {fileID: 5184325379874990013, guid: cb07990434502e440a1f657b2d8aa6cf, type: 3}
-  - {fileID: 9190095298123253203, guid: 45615615ee982b041af47b9dc2cd6026, type: 3}
   pos:
   - {fileID: 4205742531460503893}
   - {fileID: 3833660320733939043}

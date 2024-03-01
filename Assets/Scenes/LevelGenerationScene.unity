@@ -451,6 +451,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5372398941930074060, guid: be54c8dcbf2aa5e4da5d05501b6fbbaa, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8afbbe6cf9fbd3c4abd6e62d137979fa, type: 2}
     - target: {fileID: 5372398941930074062, guid: be54c8dcbf2aa5e4da5d05501b6fbbaa, type: 3}
       propertyPath: m_Name
       value: SafeCube1
