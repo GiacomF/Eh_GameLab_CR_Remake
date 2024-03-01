@@ -33,8 +33,7 @@ public class DestroyableObject : MonoBehaviour
     void Split()
     {
         Object.Destroy(coll);
-        half1.transform.position -= offset;
-        half2.transform.position += offset;
+        half1.SetActive(false);
     }
 
     private IEnumerator waitAndSplit() 

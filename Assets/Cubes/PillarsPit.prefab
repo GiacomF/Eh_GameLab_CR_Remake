@@ -305,7 +305,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ENemyToSpawn:
-  - {fileID: 3453665598993833665, guid: 098c4603545518c44a7d3d4c2fc71466, type: 3}
+  - {fileID: 1975395961096750000, guid: d2e76ea748d2ccd418fe915449115ad4, type: 3}
   Flag: {fileID: 0}
   spawns:
   - {fileID: 5503765118552680231}
