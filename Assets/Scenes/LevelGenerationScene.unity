@@ -1393,6 +1393,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SnakeObject
       objectReference: {fileID: 0}
+    - target: {fileID: 6573879753306988996, guid: 5b00881e0112ebc438cde9f80f285736, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.00562
+      objectReference: {fileID: 0}
     - target: {fileID: 7109659307767393979, guid: 5b00881e0112ebc438cde9f80f285736, type: 3}
       propertyPath: m_RootOrder
       value: 21
