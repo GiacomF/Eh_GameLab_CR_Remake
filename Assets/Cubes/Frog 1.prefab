@@ -81,6 +81,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MoveDistance: 2
   MoveTime: 0.1
+  timer: 0
+  maxTimer: 5
   isIdle: 1
   isMoving: 0
   isJumping: 0

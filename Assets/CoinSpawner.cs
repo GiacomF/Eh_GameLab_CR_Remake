@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CoinSpawner : MonoBehaviour
 {
-    public GameObject Coin;
+    public GameObject[] Collectibles;
     public Transform[] pos;
     public float MaxGenerationChance = 90f;
     void Start()
@@ -13,7 +13,7 @@ public class CoinSpawner : MonoBehaviour
 
         if(ChanceGenerated <= MaxGenerationChance)
         {
-            GameObject.Instantiate(Coin, pos[Random.Range(0,pos.Length)].position, gameObject.transform.rotation, gameObject.transform);
+            GameObject.Instantiate(Collectibles[Random.Range(0, Collectibles.Length)], pos[Random.Range(0,pos.Length)].position, gameObject.transform.rotation, gameObject.transform);
         }
     }
 }

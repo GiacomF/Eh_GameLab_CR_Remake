@@ -9,6 +9,7 @@ TagManager:
   - Tile
   - Pillars Tile
   - CameraToDestroy
+  - Invincibilty
   layers:
   - Default
   - TransparentFX

@@ -6,6 +6,8 @@ public class V3_PlayerController : MonoBehaviour
 {
     public float MoveDistance = 1;
     public float MoveTime = 0.4f;
+    public float timer;
+    public float maxTimer;
 
     public bool isIdle = true;
     public bool isMoving = false;
@@ -26,6 +28,16 @@ public class V3_PlayerController : MonoBehaviour
     {
         if(!GameStateManager.instance.gameIsPaused)
         {
+            if(isInvincible)
+            {
+                timer+= Time.deltaTime;
+                if(timer>=maxTimer)
+                {
+                    isInvincible = false;
+                    timer = 0f;
+                }
+            }
+
             CanIdle();
             CanMove();
         }
@@ -100,13 +112,10 @@ public class V3_PlayerController : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if(!isInvincible)
+        if(other.CompareTag("Enemy"))
         {
-            if(other.CompareTag("Enemy"))
-            {
-                animatorController.splatPlayer();
-                GameStateManager.instance.SetCurrentGameState(GameStates.GameOver);
-            }
+            animatorController.splatPlayer();
+            GameStateManager.instance.SetCurrentGameState(GameStates.GameOver);
         }
     }
 }
