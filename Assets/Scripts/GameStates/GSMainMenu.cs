@@ -20,6 +20,10 @@ public class GSMainMenu : IGameState
         {
             startNewGame();
         }
+        else if(Input.GetKeyDown(KeyCode.L))
+        {
+            Application.Quit();
+        }
     }
     public static void Quit()
     {
