@@ -7,7 +7,6 @@ public class GSGameOver : IGameState
 {
     public void OnStateEnter()
     {
-        Time.timeScale = 0;
         if (LevelManager.instance.currLevel.getScore() > LevelManager.instance.getHighestScore()) 
         {
             LevelManager.instance.setHighestScore(LevelManager.instance.currLevel.getScore());
